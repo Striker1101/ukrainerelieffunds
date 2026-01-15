@@ -41,7 +41,9 @@ public function home()
     public function contact() { return view('pages.contact'); }
 
     public function faq() { return view('pages.faq'); }
-    public function testimony() { return view('pages.testimony'); }
+    public function testimony() {
+        $testimonials = TestimoniesData::testimonies();
+         return view('pages.testimony', compact('testimonials')); }
     public function admin() { return view('pages.admin'); }
 
     // Donation listing
@@ -83,17 +85,23 @@ public function home()
         return view('pages.donation_detail', compact('donation', 'categories', 'options'));
     }
 
-    public function news() { return view('pages.news', ['news' => $this->news]); }
+    public function news() {
+    $newsData = NewsData::news();
+    return view('pages.news', compact('newsData')); }
 
     // News detail page (example)
     public function news_detail($id) {
         $news = collect(NewsData::news())->firstWhere('id', $id);
+        $categories = Category::all();
+        $all_news = collect(NewsData::news());
+        $tags = collect(NewsData::tags());
+        $recent_news = $all_news->sortByDesc('date')->take(3);
 
         if (!$news) {
             abort(404);
         }
 
-        return view('pages.news_detail', compact('news'));
+        return view('pages.news_detail', compact('news', 'categories','recent_news', 'tags'));
     }
 
     // Contact form submission

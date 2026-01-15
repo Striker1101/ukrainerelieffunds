@@ -1775,31 +1775,30 @@
         <div class="page-header__bg"></div><!-- /.page-header__bg -->
         <div class="container">
             <h2 class="page-header__title">
-                Church lord solution to build Prayer pastor news </h2><!-- /.page-title -->
+                {{ $news['slug'] }} </h2><!-- /.page-title -->
             <ul class="carit-breadcrumb list-unstyled">
                 <!-- Breadcrumb NavXT 7.5.0 -->
                 <li class="home"><span property="itemListElement" typeof="ListItem"><a property="item"
-                            typeof="WebPage" title="Go to Carit." href="https://caritwp.bracketweb.com"
-                            class="home"><span property="name">Carit</span></a>
+                            typeof="WebPage" title="Go to {{ config('custom.title') }}." href="{{ route('home') }}"
+                            class="home"><span property="name">{{ config('custom.title') }}</span></a>
                         <meta property="position" content="1">
                     </span></li>
                 <li class="post-root post post-post"><span property="itemListElement" typeof="ListItem"><a
-                            property="item" typeof="WebPage" title="Go to Blog List."
-                            href="https://caritwp.bracketweb.com/blog-list/" class="post-root post post-post"><span
-                                property="name">Blog List</span></a>
+                            property="item" typeof="WebPage" title="Go to Blog List." href="{{ route('news') }}"
+                            class="post-root post post-post"><span property="name">News List</span></a>
                         <meta property="position" content="2">
                     </span></li>
                 <li class="taxonomy category"><span property="itemListElement" typeof="ListItem"><a property="item"
                             typeof="WebPage" title="Go to the Prototyping Category archives."
-                            href="https://caritwp.bracketweb.com/category/prototyping/" class="taxonomy category"><span
+                            href="{{ route('news_detail', ['id' => $news['id']]) }}" class="taxonomy category"><span
                                 property="name">Prototyping</span></a>
                         <meta property="position" content="3">
                     </span></li>
                 <li class="post post-post current-item"><span property="itemListElement" typeof="ListItem"><span
-                            property="name" class="post post-post current-item">Church lord solution to build Prayer
-                            pastor news</span>
-                        <meta property="url"
-                            content="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/">
+                            property="name" class="post post-post current-item">
+                            {{ $news['slug'] }}
+                        </span>
+                        <meta property="url" content="{{ route('news_detail', ['id' => $news['id']]) }}">
                         <meta property="position" content="4">
                     </span></li>
             </ul><!-- /.thm-breadcrumb list-unstyled -->
@@ -1816,53 +1815,53 @@
                         <div class="blog-details__top carit-custom-wrap wow fadeInUp" data-wow-duration='1500ms'
                             data-wow-delay='500ms'>
                             <div class="blog-card-list__image">
-                                <img width="853" height="419"
-                                    src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-02-853x419.png"
+                                <img width="853" height="419" src="{{ asset('images/' . $news['image']) }}"
                                     class="attachment-carit_blog_853X419 size-carit_blog_853X419 wp-post-image"
                                     alt="" decoding="async" />
-                                <div class="blog-card-list__date"><span>20 /</span>Nov</div><!-- /.blog-card__date -->
+                                <div class="blog-card-list__date"><span>{{ $news['date'] }}</div>
+                                <!-- /.blog-card__date -->
                             </div><!-- /.blog-card__image -->
 
                             <div class="blog-card-list__content">
-                                <h3 class="blog-card-list__title">Church lord solution to build Prayer pastor news</h3>
+                                <h3 class="blog-card-list__title">{{ $news['slug'] }}</h3>
                                 <!-- /.blog-card-list__title -->
                                 <ul class="ml-0 list-unstyled blog-card-list__meta">
                                     <li><i class="icon-user"></i> <span class="author vcard"><a class="url fn n"
-                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
+                                                href="{{ route('news') }}">{{ $news['Author'] }}</a></span>
                                     </li>
                                     <li><i class="icon-chat"></i> <a
-                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/#comments">2
-                                            Comments<span class="screen-reader-text"> on Church lord solution to build
-                                                Prayer pastor news</span></a></li>
+                                            href="{{ route('news_detail', ['id' => $news['id']]) }}">
+                                            {{ isset($news['comments']) ? count($news['comments']) : 0 }}
+                                            Comments<span class="screen-reader-text">
+                                                {{ \Illuminate\Support\Str::words($news['content_one'], 20, '...') }}
+                                            </span></a></li>
                                 </ul><!-- /.list-unstyled blog-card__meta -->
 
                                 <div class="blog-details__content">
                                     <div class="clearfix blog-details__content__inner">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in facilisis urna.
-                                            In sit amet eros feugiat, malesuada lectus id, congue turpis. Donec fermentum
-                                            est id libero rutrum feugiat sed ac turpis. Mauris cursus ligula nisl, non
-                                            luctus nisl.</p>
-                                        <p>Proin finibus imperdiet nulla, quis euismod nunc gravida eget. Vestibulum iaculis
-                                            nibh facilisis felis iaculis vestibulum. Curabitur purus nulla, bibendum vitae
-                                            varius pulvinar, molestie in massa. Quisque ut venenatis nunc, vitae rutrum
-                                            libero. Duis eget consectetur urna. Ut ut aliquet magna. Nullam augue nulla,
-                                            fermentum vel elit eu, posuere vehicula tellus. Orci varius natoque penatibus et
-                                            magnis dis parturient montes, nascetur ridiculus mus. Nam eget nisl non elit
-                                            tempor dignissim nec non sapien.</p>
+                                        <p>{{ $news['content_one'] }}</p>
+                                        <p>{{ $news['content_two'] }}</p>
                                     </div>
                                 </div>
                             </div><!-- /.blog-card-list__content -->
                             <div class="blog-details__meta">
-                                <span class="blog-details__tags cat-links"><span>Categories: </span><a
-                                        href="https://caritwp.bracketweb.com/category/prototyping/"
-                                        rel="category tag">Prototyping</a> <a
-                                        href="https://caritwp.bracketweb.com/category/ui-design/" rel="category tag">UI
-                                        Design</a></span><span
-                                    class="blog-details__tags news-details__tags--tags tag-links"><span>Tags: </span><a
-                                        href="https://caritwp.bracketweb.com/tag/consultant/"
-                                        rel="tag">Consultant</a> <a
-                                        href="https://caritwp.bracketweb.com/tag/creative/"
-                                        rel="tag">Creative</a></span>
+                                <span class="blog-details__tags cat-links">
+                                    <span>Categories: </span>
+
+                                    @foreach ($news['category'] as $cat)
+                                        <a href="{{ route('news') }}?category={{ $cat }}"
+                                            rel="category tag">{{ $cat }}</a>
+                                    @endforeach
+
+                                </span><span class="blog-details__tags news-details__tags--tags tag-links">
+                                    <span>Tags: </span>
+
+                                    @foreach ($news['tags'] as $tag)
+                                        <a href="{{ route('news') }}?tag={{ $tag }}"
+                                            rel="tag">{{ $tag }}</a>
+                                    @endforeach
+
+                                </span>
                             </div>
                             <div class="mt-4 admin-one wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='500ms'>
                                 <div class="admin-one__thumb">
@@ -1870,11 +1869,8 @@
                                         alt="CaritWP">
                                 </div><!-- /.admin-one__thumb -->
                                 <div class="admin-one__content">
-                                    <h3 class="admin-one__title">CaritWP</h3><!-- /.admin-one__title -->
-                                    <p class="admin-one__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Morbi in facilisis urna. In sit amet eros feugiat, malesuada lectus id, congue
-                                        turpis. Donec fermentum est id libero rutrum feugiat sed ac turpis. Mauris cursus
-                                        ligula nisl, non luctus nisl.</p><!-- /.admin-one__text -->
+                                    <h3 class="admin-one__title">{{ $news['Author'] }}</h3><!-- /.admin-one__title -->
+                                    <p class="admin-one__text">{{ $news['Author_keyword'] }}</p><!-- /.admin-one__text -->
                                 </div><!-- /.admin-one__content -->
                                 <div class="admin-one__social">
                                     <a href="https://x.com"><i class="fab fa-twitter"></i></a>
@@ -1886,80 +1882,41 @@
                     <div id="comments" class="comments-area">
 
                         <h3 class="comment-one__title">
-                            <b>2</b> thoughts on &ldquo;<span>Church lord solution to build Prayer pastor news</span>&rdquo;
+                            <b>{{ isset($news['comments']) ? count($news['comments']) : 0 }}</b> thoughts on
+                            &ldquo;<span>{{ $news['slug'] }}</span>&rdquo;
                         </h3><!-- .comments-title -->
 
 
 
                         <ul class="comment-list">
-                            <li id="comment-4" class="comment even thread-even depth-1">
-                                <article id="div-comment-4" class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img alt=''
-                                                src='https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=90&#038;d=mm&#038;r=g'
-                                                srcset='https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=180&#038;d=mm&#038;r=g 2x'
-                                                class='avatar avatar-90 photo' height='90' width='90'
-                                                decoding='async' /> <b class="fn"><a
-                                                    href="https://caritwp.bracketweb.com" class="url"
-                                                    rel="ugc">Noile Mohsin</a></b> <span class="says">says:</span>
-                                        </div><!-- .comment-author -->
+                            @foreach ($news['comments'] as $comment)
+                                <li id="comment-4" class="comment even thread-even depth-1">
+                                    <article id="div-comment-4" class="comment-body">
+                                        <footer class="comment-meta">
+                                            <div class="comment-author vcard">
+                                                <img alt=''
+                                                    src='https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=90&#038;d=mm&#038;r=g'
+                                                    srcset='https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=180&#038;d=mm&#038;r=g 2x'
+                                                    class='avatar avatar-90 photo' height='90' width='90'
+                                                    decoding='async' /> <b class="fn"><a href="#"
+                                                        class="url" rel="ugc">{{ $comment['name'] }}</a></b>
+                                                <span class="says">says:</span>
+                                            </div><!-- .comment-author -->
 
-                                        <div class="comment-metadata">
-                                            <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/#comment-4"><time
-                                                    datetime="2025-11-20T12:15:55+00:00">November 20, 2025 at 12:15
-                                                    pm</time></a>
-                                        </div><!-- .comment-metadata -->
+                                            <div class="comment-metadata">
+                                                <a href="#"><time
+                                                        datetime="{{ $comment['date'] }}">{{ $comment['date'] }}</time></a>"
+                                            </div><!-- .comment-metadata -->
 
-                                    </footer><!-- .comment-meta -->
+                                        </footer><!-- .comment-meta -->
 
-                                    <div class="comment-content">
-                                        <p>Phasellus ac consequat turpis, sit amet fermentum nulla. Donec dignissim augue
-                                            nunc. Praesent bibendum erat.</p>
-                                    </div><!-- .comment-content -->
+                                        <div class="comment-content">
+                                            <p>{{ $comment['message'] }}</p>
+                                        </div><!-- .comment-content -->
+                                    </article><!-- .comment-body -->
+                                </li>
+                            @endforeach
 
-                                    <div class="reply"><a rel="nofollow" class="comment-reply-link"
-                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/?replytocom=4#respond"
-                                            data-commentid="4" data-postid="402" data-belowelement="div-comment-4"
-                                            data-respondelement="respond" data-replyto="Reply to Noile Mohsin"
-                                            aria-label="Reply to Noile Mohsin">Reply</a></div>
-                                </article><!-- .comment-body -->
-                            </li><!-- #comment-## -->
-                            <li id="comment-5" class="comment odd alt thread-odd thread-alt depth-1">
-                                <article id="div-comment-5" class="comment-body">
-                                    <footer class="comment-meta">
-                                        <div class="comment-author vcard">
-                                            <img alt=''
-                                                src='https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=90&#038;d=mm&#038;r=g'
-                                                srcset='https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=180&#038;d=mm&#038;r=g 2x'
-                                                class='avatar avatar-90 photo' height='90' width='90'
-                                                decoding='async' /> <b class="fn"><a
-                                                    href="https://caritwp.bracketweb.com" class="url"
-                                                    rel="ugc">Noile Mohsin</a></b> <span class="says">says:</span>
-                                        </div><!-- .comment-author -->
-
-                                        <div class="comment-metadata">
-                                            <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/#comment-5"><time
-                                                    datetime="2025-11-20T12:16:00+00:00">November 20, 2025 at 12:16
-                                                    pm</time></a>
-                                        </div><!-- .comment-metadata -->
-
-                                    </footer><!-- .comment-meta -->
-
-                                    <div class="comment-content">
-                                        <p>Phasellus ac consequat turpis, sit amet fermentum nulla. Donec dignissim augue
-                                            nunc. Praesent bibendum erat ac lectus lobortis.</p>
-                                    </div><!-- .comment-content -->
-
-                                    <div class="reply"><a rel="nofollow" class="comment-reply-link"
-                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/?replytocom=5#respond"
-                                            data-commentid="5" data-postid="402" data-belowelement="div-comment-5"
-                                            data-respondelement="respond" data-replyto="Reply to Noile Mohsin"
-                                            aria-label="Reply to Noile Mohsin">Reply</a></div>
-                                </article><!-- .comment-body -->
-                            </li><!-- #comment-## -->
                         </ul><!-- .comment-list -->
                         <div id="respond" class="comment-respond">
                             <h3 class="comment-form__title">Leave a Comment <small><a rel="nofollow"
@@ -1999,42 +1956,18 @@
                     <div class="sidebar">
 
                         <aside id="secondary" class="widget-area">
-                            <section id="block-2" class="sidebar__single widget widget_block widget_search">
-                                <form role="search" method="get" action="https://caritwp.bracketweb.com/"
-                                    class="wp-block-search__button-outside wp-block-search__icon-button wp-block-search">
-                                    <label class="wp-block-search__label screen-reader-text"
-                                        for="wp-block-search__input-1">Search</label>
-                                    <div class="wp-block-search__inside-wrapper"><input class="wp-block-search__input"
-                                            id="wp-block-search__input-1" placeholder="Enter Your Keyword..."
-                                            value="" type="search" name="s" required /><button
-                                            aria-label="Search" class="wp-block-search__button has-icon wp-element-button"
-                                            type="submit"><svg class="search-icon" viewBox="0 0 24 24" width="24"
-                                                height="24">
-                                                <path
-                                                    d="M13 5c-3.3 0-6 2.7-6 6 0 1.4.5 2.7 1.3 3.7l-3.8 3.8 1.1 1.1 3.8-3.8c1 .8 2.3 1.3 3.7 1.3 3.3 0 6-2.7 6-6S16.3 5 13 5zm0 10.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z">
-                                                </path>
-                                            </svg></button></div>
-                                </form>
-                            </section>
                             <section id="carit_blog_categories_widget-2"
                                 class="sidebar__single widget widget_carit_blog_categories_widget">
                                 <div class="title">
                                     <h2>Categories</h2>
                                 </div>
                                 <ul class="ml-0 sidebar__categories list-unstyled">
-                                    <li><a href="https://caritwp.bracketweb.com/category/architecture/">architecture</a><i
-                                            class="icon-next"></i></li>
-                                    <li><a href="https://caritwp.bracketweb.com/category/figma-design/">Figma Design</a><i
-                                            class="icon-next"></i></li>
-                                    <li><a href="https://caritwp.bracketweb.com/category/prototyping/">Prototyping</a><i
-                                            class="icon-next"></i></li>
-                                    <li><a href="https://caritwp.bracketweb.com/category/ui-design/">UI Design</a><i
-                                            class="icon-next"></i></li>
-                                    <li><a
-                                            href="https://caritwp.bracketweb.com/category/uncategorized/">Uncategorized</a><i
-                                            class="icon-next"></i></li>
-                                    <li><a href="https://caritwp.bracketweb.com/category/ux-strategy/">UX strategy</a><i
-                                            class="icon-next"></i></li>
+                                    @foreach ($categories as $cat)
+                                        <li><a
+                                                href="{{ route('news') }}?category={{ $cat['name'] }}">{{ $cat['name'] }}</a><i
+                                                class="icon-next"></i></li>
+                                    @endforeach
+
                                 </ul><!-- /.sidebar__categories list-unstyled -->
                             </section>
                             <section id="custom_recent_posts_widget-2"
@@ -2043,60 +1976,29 @@
                                     <h2>Recent News</h2>
                                 </div>
                                 <ul class="ml-0 sidebar__posts list-unstyled">
-                                    <li class="sidebar__posts__item">
-                                        <div class="sidebar__posts__image">
-                                            <img width="106" height="129"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-04-106x129.png"
-                                                class="attachment-carit_blog_106X129 size-carit_blog_106X129 wp-post-image"
-                                                alt="" decoding="async" />
-                                        </div><!-- /.sidebar__posts__image -->
-                                        <div class="sidebar__posts__content">
-                                            <p class="sidebar__posts__meta"><i class="icon-chat"></i> <a
-                                                    href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-7/#comments">2
-                                                    Comments<span class="screen-reader-text"> on Church lord solution to
-                                                        build Prayer pastor news</span></a></p>
-                                            <!-- /.sidebar__posts__admin -->
-                                            <h4 class="sidebar__posts__title"><a
-                                                    href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-7/">Church
-                                                    lord solution to build Prayer</a></h4><!-- /.sidebar__posts__title -->
-                                        </div><!-- /.sidebar__posts__content -->
-                                    </li>
-                                    <li class="sidebar__posts__item">
-                                        <div class="sidebar__posts__image">
-                                            <img width="106" height="129"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-05-106x129.png"
-                                                class="attachment-carit_blog_106X129 size-carit_blog_106X129 wp-post-image"
-                                                alt="" decoding="async" />
-                                        </div><!-- /.sidebar__posts__image -->
-                                        <div class="sidebar__posts__content">
-                                            <p class="sidebar__posts__meta"><i class="icon-chat"></i> <a
-                                                    href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-6/#comments">2
-                                                    Comments<span class="screen-reader-text"> on Church lord solution to
-                                                        build Prayer pastor news</span></a></p>
-                                            <!-- /.sidebar__posts__admin -->
-                                            <h4 class="sidebar__posts__title"><a
-                                                    href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-6/">Church
-                                                    lord solution to build Prayer</a></h4><!-- /.sidebar__posts__title -->
-                                        </div><!-- /.sidebar__posts__content -->
-                                    </li>
-                                    <li class="sidebar__posts__item">
-                                        <div class="sidebar__posts__image">
-                                            <img width="106" height="129"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-10-106x129.png"
-                                                class="attachment-carit_blog_106X129 size-carit_blog_106X129 wp-post-image"
-                                                alt="" decoding="async" />
-                                        </div><!-- /.sidebar__posts__image -->
-                                        <div class="sidebar__posts__content">
-                                            <p class="sidebar__posts__meta"><i class="icon-chat"></i> <a
-                                                    href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news/#comments">2
-                                                    Comments<span class="screen-reader-text"> on Church lord solution to
-                                                        build Prayer pastor news</span></a></p>
-                                            <!-- /.sidebar__posts__admin -->
-                                            <h4 class="sidebar__posts__title"><a
-                                                    href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news/">Church
-                                                    lord solution to build Prayer</a></h4><!-- /.sidebar__posts__title -->
-                                        </div><!-- /.sidebar__posts__content -->
-                                    </li>
+                                    @foreach ($recent_news as $news)
+                                        <li class="sidebar__posts__item">
+                                            <div class="sidebar__posts__image">
+                                                <img width="106" height="129"
+                                                    src="{{ asset('images/' . $news['image']) }}"
+                                                    class="attachment-carit_blog_106X129 size-carit_blog_106X129 wp-post-image"
+                                                    alt="" decoding="async" />
+                                            </div><!-- /.sidebar__posts__image -->
+                                            <div class="sidebar__posts__content">
+                                                <p class="sidebar__posts__meta"><i class="icon-chat"></i> <a
+                                                        href="{{ route('news_detail', ['id' => $news['id']]) }}">
+                                                        {{ isset($news['comments']) ? count($news['comments']) : 0 }}
+                                                        Comments<span class="screen-reader-text">
+                                                            {{ $news['slug'] }}</span></a></p>
+                                                <!-- /.sidebar__posts__admin -->
+                                                <h4 class="sidebar__posts__title"><a
+                                                        href="{{ route('news_detail', ['id' => $news['id']]) }}">{{ $news['slug'] }}</a>
+                                                </h4>
+                                                <!-- /.sidebar__posts__title -->
+                                            </div><!-- /.sidebar__posts__content -->
+                                        </li>
+                                    @endforeach
+
                                 </ul><!-- /.sidebar__posts list-unstyled -->
                             </section>
                             <section id="carit_blog_tags_widget-2"
@@ -2105,21 +2007,12 @@
                                     <h2>Tags</h2>
                                 </div>
                                 <div class="sidebar__tags">
-                                    <a class="sidebar__tag__item"
-                                        href="https://caritwp.bracketweb.com/category/architecture/">
-                                        architecture </a>
-                                    <a class="sidebar__tag__item"
-                                        href="https://caritwp.bracketweb.com/category/figma-design/">
-                                        Figma Design </a>
-                                    <a class="sidebar__tag__item"
-                                        href="https://caritwp.bracketweb.com/category/prototyping/">
-                                        Prototyping </a>
-                                    <a class="sidebar__tag__item"
-                                        href="https://caritwp.bracketweb.com/category/ui-design/">
-                                        UI Design </a>
-                                    <a class="sidebar__tag__item"
-                                        href="https://caritwp.bracketweb.com/category/uncategorized/">
-                                        Uncategorized </a>
+                                    @foreach ($tags as $tag)
+                                        <a class="sidebar__tag__item"
+                                            href="{{ route('news') }}?category{{ $tag }}">
+                                            {{ $tag }} </a>
+                                    @endforeach
+
                                 </div>
                             </section>
                         </aside><!-- #secondary -->

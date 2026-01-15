@@ -1779,13 +1779,13 @@
             <ul class="carit-breadcrumb list-unstyled">
                 <!-- Breadcrumb NavXT 7.5.0 -->
                 <li class="home"><span property="itemListElement" typeof="ListItem"><a property="item"
-                            typeof="WebPage" title="Go to Carit." href="https://caritwp.bracketweb.com"
-                            class="home"><span property="name">Carit</span></a>
+                            typeof="WebPage" title="Go to Carit." href="{{ route('home') }}" class="home"><span
+                                property="name">{{ config('custom.title') }}</span></a>
                         <meta property="position" content="1">
                     </span></li>
                 <li class="post post-page current-item"><span property="itemListElement" typeof="ListItem"><span
-                            property="name" class="post post-page current-item">Testimonials Carousel</span>
-                        <meta property="url" content="https://caritwp.bracketweb.com/testimonials-carousel/">
+                            property="name" class="post post-page current-item">Testimonials</span>
+                        <meta property="url" content="{{ route('testimony') }}">
                         <meta property="position" content="2">
                     </span></li>
             </ul><!-- /.thm-breadcrumb list-unstyled -->
@@ -1803,294 +1803,57 @@
                         <div class="container">
                             <div class="testimonials-page__carousel carit-owl__carousel carit-owl__carousel--with-shadow carit-owl__carousel--basic-nav owl-carousel owl-theme"
                                 data-owl-options='{&quot;loop&quot;:true,&quot;margin&quot;:0,&quot;items&quot;:1,&quot;nav&quot;:true,&quot;dots&quot;:false,&quot;smartSpeed&quot;:700,&quot;autoplay&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;animateOut&quot;:&quot;&quot;,&quot;animateIn&quot;:&quot;&quot;,&quot;autoplayHoverPause&quot;:true,&quot;navText&quot;:[&quot;&lt;span class=\&quot; fa fa-angle-left \&quot;&gt;&lt;\/span&gt;&quot;,&quot;&lt;span class=\&quot; fa fa-angle-right \&quot;&gt;&lt;\/span&gt;&quot;],&quot;responsive&quot;:{&quot;992&quot;:{&quot;margin&quot;:30,&quot;stagePadding&quot;:0,&quot;items&quot;:2},&quot;768&quot;:{&quot;margin&quot;:0,&quot;stagePadding&quot;:0,&quot;items&quot;:1},&quot;576&quot;:{&quot;margin&quot;:0,&quot;stagePadding&quot;:0,&quot;items&quot;:1},&quot;0&quot;:{&quot;margin&quot;:0,&quot;stagePadding&quot;:0,&quot;items&quot;:1}}}'>
-                                <div class="item">
-                                    <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="testimonials-card__top">
-                                            <h3 class="testimonials-card__title">Autography Evelyn</h3>
-                                            <!-- /.testimonials-card__title -->
-                                            <div class="testimonials-card__star">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i>
-                                            </div><!-- /.testimonials-card__star -->
-                                            <p class="testimonials-card__text">Morbi urna ligula, pharetra a euismod eu,
-                                                venenatis ac orci. Vestibulum tempor leo aliquam odio interdum tincidunt.
-                                                Nulla id pharetra nisl, eget rhoncus augue. Proin vel odio suscipit, egestas
-                                                magna ut, porta est. In porta eros mauris</p>
-                                            <!-- /.testimonials-card__text -->
-                                        </div><!-- /.testimonials-card__top -->
-                                        <div class="testimonials-card__bottom">
-                                            <div class="testimonials-card__thumb">
-                                                <img decoding="async"
-                                                    src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/testi-1-1.jpg"
-                                                    alt="testi-1-1" title="testi-1-1">
-                                                <div class="quite">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width=" "
-                                                        height=" " viewBox="0 0 300.000000 300.000000"
-                                                        preserveAspectRatio="xMidYMid meet">
-                                                        <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-                                                            fill="" stroke="none">
-                                                            <path
-                                                                d="M1127 1828 c-115 -123 -194 -392 -154 -529 53 -180 275 -240 406 -108 116 115 84 315 -61 390 -21 10 -44 19 -53 19 -12 0 -15 6 -9 23 9 30 43 97 65 128 l18 26 -74 51 c-41 29 -78 52 -82 52 -4 0 -29 -23 -56 -52z" />
-                                                            <path
-                                                                d="M1711 1825 c-99 -109 -154 -264 -155 -435 -1 -116 7 -141 66 -199 116 -116 313 -85 390 63 34 64 31 155 -7 224 -30 55 -89 105 -138 118 -15 3 -27 13 -27 20 0 17 34 87 61 126 11 14 19 28 19 31 0 7 -124 95 -143 103 -9 3 -34 -17 -66 -51z" />
-                                                        </g>
-                                                    </svg>
-                                                </div><!-- /.quite -->
-                                            </div><!-- /.testimonials-card__thumb -->
-                                            <div class="testimonials-card__fram">
-                                                <div class="testimonials-card__fram__signeture">
+
+                                @foreach ($testimonials as $testimony)
+                                    <div class="item">
+                                        <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms'
+                                            data-wow-delay='100ms'>
+                                            <div class="testimonials-card__top">
+                                                <h3 class="testimonials-card__title">{{ $testimony['name'] }}</h3>
+                                                <!-- /.testimonials-card__title -->
+                                                <div class="testimonials-card__star">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                        class="fas fa-star"></i>
+                                                </div><!-- /.testimonials-card__star -->
+                                                <p class="testimonials-card__text">{{ $testimony['content'] }}</p>
+                                                <!-- /.testimonials-card__text -->
+                                            </div><!-- /.testimonials-card__top -->
+                                            <div class="testimonials-card__bottom">
+                                                <div class="testimonials-card__thumb">
                                                     <img decoding="async"
-                                                        src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/signeture.png"
-                                                        alt="signeture" title="signeture">
-                                                </div><!-- /.testimonials-card__fram__signneture -->
-                                                <div class="testimonials-card__fram__tag"><span>UX/UI Specialist</span>
-                                                </div><!-- /.testimonials-card__fram__tag -->
-                                            </div><!-- /.testimonials-card__fram -->
-                                        </div><!-- /.testimonials-card__bottom -->
-                                    </div><!-- /.testimonials-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="testimonials-card__top">
-                                            <h3 class="testimonials-card__title">Cameron Williamson</h3>
-                                            <!-- /.testimonials-card__title -->
-                                            <div class="testimonials-card__star">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i>
-                                            </div><!-- /.testimonials-card__star -->
-                                            <p class="testimonials-card__text">Morbi urna ligula, pharetra a euismod eu,
-                                                venenatis ac orci. Vestibulum tempor leo aliquam odio interdum tincidunt.
-                                                Nulla id pharetra nisl, eget rhoncus augue. Proin vel odio suscipit, egestas
-                                                magna ut, porta est. In porta eros mauris</p>
-                                            <!-- /.testimonials-card__text -->
-                                        </div><!-- /.testimonials-card__top -->
-                                        <div class="testimonials-card__bottom">
-                                            <div class="testimonials-card__thumb">
-                                                <img decoding="async"
-                                                    src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/testi-1-2.jpg"
-                                                    alt="testi-1-2" title="testi-1-2">
-                                                <div class="quite">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width=" "
-                                                        height=" " viewBox="0 0 300.000000 300.000000"
-                                                        preserveAspectRatio="xMidYMid meet">
-                                                        <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-                                                            fill="" stroke="none">
-                                                            <path
-                                                                d="M1127 1828 c-115 -123 -194 -392 -154 -529 53 -180 275 -240 406 -108 116 115 84 315 -61 390 -21 10 -44 19 -53 19 -12 0 -15 6 -9 23 9 30 43 97 65 128 l18 26 -74 51 c-41 29 -78 52 -82 52 -4 0 -29 -23 -56 -52z" />
-                                                            <path
-                                                                d="M1711 1825 c-99 -109 -154 -264 -155 -435 -1 -116 7 -141 66 -199 116 -116 313 -85 390 63 34 64 31 155 -7 224 -30 55 -89 105 -138 118 -15 3 -27 13 -27 20 0 17 34 87 61 126 11 14 19 28 19 31 0 7 -124 95 -143 103 -9 3 -34 -17 -66 -51z" />
-                                                        </g>
-                                                    </svg>
-                                                </div><!-- /.quite -->
-                                            </div><!-- /.testimonials-card__thumb -->
-                                            <div class="testimonials-card__fram">
-                                                <div class="testimonials-card__fram__signeture">
-                                                    <img decoding="async"
-                                                        src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/signeture.png"
-                                                        alt="signeture" title="signeture">
-                                                </div><!-- /.testimonials-card__fram__signneture -->
-                                                <div class="testimonials-card__fram__tag"><span>UX/UI Specialist</span>
-                                                </div><!-- /.testimonials-card__fram__tag -->
-                                            </div><!-- /.testimonials-card__fram -->
-                                        </div><!-- /.testimonials-card__bottom -->
-                                    </div><!-- /.testimonials-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="testimonials-card__top">
-                                            <h3 class="testimonials-card__title">Leslie Alexander</h3>
-                                            <!-- /.testimonials-card__title -->
-                                            <div class="testimonials-card__star">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i>
-                                            </div><!-- /.testimonials-card__star -->
-                                            <p class="testimonials-card__text">Morbi urna ligula, pharetra a euismod eu,
-                                                venenatis ac orci. Vestibulum tempor leo aliquam odio interdum tincidunt.
-                                                Nulla id pharetra nisl, eget rhoncus augue. Proin vel odio suscipit, egestas
-                                                magna ut, porta est. In porta eros mauris</p>
-                                            <!-- /.testimonials-card__text -->
-                                        </div><!-- /.testimonials-card__top -->
-                                        <div class="testimonials-card__bottom">
-                                            <div class="testimonials-card__thumb">
-                                                <img decoding="async"
-                                                    src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/testi-1-3.jpg"
-                                                    alt="testi-1-3" title="testi-1-3">
-                                                <div class="quite">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width=" "
-                                                        height=" " viewBox="0 0 300.000000 300.000000"
-                                                        preserveAspectRatio="xMidYMid meet">
-                                                        <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-                                                            fill="" stroke="none">
-                                                            <path
-                                                                d="M1127 1828 c-115 -123 -194 -392 -154 -529 53 -180 275 -240 406 -108 116 115 84 315 -61 390 -21 10 -44 19 -53 19 -12 0 -15 6 -9 23 9 30 43 97 65 128 l18 26 -74 51 c-41 29 -78 52 -82 52 -4 0 -29 -23 -56 -52z" />
-                                                            <path
-                                                                d="M1711 1825 c-99 -109 -154 -264 -155 -435 -1 -116 7 -141 66 -199 116 -116 313 -85 390 63 34 64 31 155 -7 224 -30 55 -89 105 -138 118 -15 3 -27 13 -27 20 0 17 34 87 61 126 11 14 19 28 19 31 0 7 -124 95 -143 103 -9 3 -34 -17 -66 -51z" />
-                                                        </g>
-                                                    </svg>
-                                                </div><!-- /.quite -->
-                                            </div><!-- /.testimonials-card__thumb -->
-                                            <div class="testimonials-card__fram">
-                                                <div class="testimonials-card__fram__signeture">
-                                                    <img decoding="async"
-                                                        src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/signeture.png"
-                                                        alt="signeture" title="signeture">
-                                                </div><!-- /.testimonials-card__fram__signneture -->
-                                                <div class="testimonials-card__fram__tag"><span>UX/UI Specialist</span>
-                                                </div><!-- /.testimonials-card__fram__tag -->
-                                            </div><!-- /.testimonials-card__fram -->
-                                        </div><!-- /.testimonials-card__bottom -->
-                                    </div><!-- /.testimonials-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="testimonials-card__top">
-                                            <h3 class="testimonials-card__title">Jenny Wilson</h3>
-                                            <!-- /.testimonials-card__title -->
-                                            <div class="testimonials-card__star">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i>
-                                            </div><!-- /.testimonials-card__star -->
-                                            <p class="testimonials-card__text">Morbi urna ligula, pharetra a euismod eu,
-                                                venenatis ac orci. Vestibulum tempor leo aliquam odio interdum tincidunt.
-                                                Nulla id pharetra nisl, eget rhoncus augue. Proin vel odio suscipit, egestas
-                                                magna ut, porta est. In porta eros mauris</p>
-                                            <!-- /.testimonials-card__text -->
-                                        </div><!-- /.testimonials-card__top -->
-                                        <div class="testimonials-card__bottom">
-                                            <div class="testimonials-card__thumb">
-                                                <img decoding="async"
-                                                    src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/testi-1-4.jpg"
-                                                    alt="testi-1-4" title="testi-1-4">
-                                                <div class="quite">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width=" "
-                                                        height=" " viewBox="0 0 300.000000 300.000000"
-                                                        preserveAspectRatio="xMidYMid meet">
-                                                        <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-                                                            fill="" stroke="none">
-                                                            <path
-                                                                d="M1127 1828 c-115 -123 -194 -392 -154 -529 53 -180 275 -240 406 -108 116 115 84 315 -61 390 -21 10 -44 19 -53 19 -12 0 -15 6 -9 23 9 30 43 97 65 128 l18 26 -74 51 c-41 29 -78 52 -82 52 -4 0 -29 -23 -56 -52z" />
-                                                            <path
-                                                                d="M1711 1825 c-99 -109 -154 -264 -155 -435 -1 -116 7 -141 66 -199 116 -116 313 -85 390 63 34 64 31 155 -7 224 -30 55 -89 105 -138 118 -15 3 -27 13 -27 20 0 17 34 87 61 126 11 14 19 28 19 31 0 7 -124 95 -143 103 -9 3 -34 -17 -66 -51z" />
-                                                        </g>
-                                                    </svg>
-                                                </div><!-- /.quite -->
-                                            </div><!-- /.testimonials-card__thumb -->
-                                            <div class="testimonials-card__fram">
-                                                <div class="testimonials-card__fram__signeture">
-                                                    <img decoding="async"
-                                                        src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/signeture.png"
-                                                        alt="signeture" title="signeture">
-                                                </div><!-- /.testimonials-card__fram__signneture -->
-                                                <div class="testimonials-card__fram__tag"><span>UX/UI Specialist</span>
-                                                </div><!-- /.testimonials-card__fram__tag -->
-                                            </div><!-- /.testimonials-card__fram -->
-                                        </div><!-- /.testimonials-card__bottom -->
-                                    </div><!-- /.testimonials-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="testimonials-card__top">
-                                            <h3 class="testimonials-card__title">Guy Hawkins</h3>
-                                            <!-- /.testimonials-card__title -->
-                                            <div class="testimonials-card__star">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i>
-                                            </div><!-- /.testimonials-card__star -->
-                                            <p class="testimonials-card__text">Morbi urna ligula, pharetra a euismod eu,
-                                                venenatis ac orci. Vestibulum tempor leo aliquam odio interdum tincidunt.
-                                                Nulla id pharetra nisl, eget rhoncus augue. Proin vel odio suscipit, egestas
-                                                magna ut, porta est. In porta eros mauris</p>
-                                            <!-- /.testimonials-card__text -->
-                                        </div><!-- /.testimonials-card__top -->
-                                        <div class="testimonials-card__bottom">
-                                            <div class="testimonials-card__thumb">
-                                                <img decoding="async"
-                                                    src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/testi-1-5.jpg"
-                                                    alt="testi-1-5" title="testi-1-5">
-                                                <div class="quite">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width=" "
-                                                        height=" " viewBox="0 0 300.000000 300.000000"
-                                                        preserveAspectRatio="xMidYMid meet">
-                                                        <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-                                                            fill="" stroke="none">
-                                                            <path
-                                                                d="M1127 1828 c-115 -123 -194 -392 -154 -529 53 -180 275 -240 406 -108 116 115 84 315 -61 390 -21 10 -44 19 -53 19 -12 0 -15 6 -9 23 9 30 43 97 65 128 l18 26 -74 51 c-41 29 -78 52 -82 52 -4 0 -29 -23 -56 -52z" />
-                                                            <path
-                                                                d="M1711 1825 c-99 -109 -154 -264 -155 -435 -1 -116 7 -141 66 -199 116 -116 313 -85 390 63 34 64 31 155 -7 224 -30 55 -89 105 -138 118 -15 3 -27 13 -27 20 0 17 34 87 61 126 11 14 19 28 19 31 0 7 -124 95 -143 103 -9 3 -34 -17 -66 -51z" />
-                                                        </g>
-                                                    </svg>
-                                                </div><!-- /.quite -->
-                                            </div><!-- /.testimonials-card__thumb -->
-                                            <div class="testimonials-card__fram">
-                                                <div class="testimonials-card__fram__signeture">
-                                                    <img decoding="async"
-                                                        src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/signeture.png"
-                                                        alt="signeture" title="signeture">
-                                                </div><!-- /.testimonials-card__fram__signneture -->
-                                                <div class="testimonials-card__fram__tag"><span>UX/UI Specialist</span>
-                                                </div><!-- /.testimonials-card__fram__tag -->
-                                            </div><!-- /.testimonials-card__fram -->
-                                        </div><!-- /.testimonials-card__bottom -->
-                                    </div><!-- /.testimonials-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="testimonials-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="testimonials-card__top">
-                                            <h3 class="testimonials-card__title">Jacob Jones</h3>
-                                            <!-- /.testimonials-card__title -->
-                                            <div class="testimonials-card__star">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i>
-                                            </div><!-- /.testimonials-card__star -->
-                                            <p class="testimonials-card__text">Morbi urna ligula, pharetra a euismod eu,
-                                                venenatis ac orci. Vestibulum tempor leo aliquam odio interdum tincidunt.
-                                                Nulla id pharetra nisl, eget rhoncus augue. Proin vel odio suscipit, egestas
-                                                magna ut, porta est. In porta eros mauris</p>
-                                            <!-- /.testimonials-card__text -->
-                                        </div><!-- /.testimonials-card__top -->
-                                        <div class="testimonials-card__bottom">
-                                            <div class="testimonials-card__thumb">
-                                                <img decoding="async"
-                                                    src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/testi-1-6.jpg"
-                                                    alt="testi-1-6" title="testi-1-6">
-                                                <div class="quite">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width=" "
-                                                        height=" " viewBox="0 0 300.000000 300.000000"
-                                                        preserveAspectRatio="xMidYMid meet">
-                                                        <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-                                                            fill="" stroke="none">
-                                                            <path
-                                                                d="M1127 1828 c-115 -123 -194 -392 -154 -529 53 -180 275 -240 406 -108 116 115 84 315 -61 390 -21 10 -44 19 -53 19 -12 0 -15 6 -9 23 9 30 43 97 65 128 l18 26 -74 51 c-41 29 -78 52 -82 52 -4 0 -29 -23 -56 -52z" />
-                                                            <path
-                                                                d="M1711 1825 c-99 -109 -154 -264 -155 -435 -1 -116 7 -141 66 -199 116 -116 313 -85 390 63 34 64 31 155 -7 224 -30 55 -89 105 -138 118 -15 3 -27 13 -27 20 0 17 34 87 61 126 11 14 19 28 19 31 0 7 -124 95 -143 103 -9 3 -34 -17 -66 -51z" />
-                                                        </g>
-                                                    </svg>
-                                                </div><!-- /.quite -->
-                                            </div><!-- /.testimonials-card__thumb -->
-                                            <div class="testimonials-card__fram">
-                                                <div class="testimonials-card__fram__signeture">
-                                                    <img decoding="async"
-                                                        src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/signeture.png"
-                                                        alt="signeture" title="signeture">
-                                                </div><!-- /.testimonials-card__fram__signneture -->
-                                                <div class="testimonials-card__fram__tag"><span>UX/UI Specialist</span>
-                                                </div><!-- /.testimonials-card__fram__tag -->
-                                            </div><!-- /.testimonials-card__fram -->
-                                        </div><!-- /.testimonials-card__bottom -->
-                                    </div><!-- /.testimonials-card -->
-                                </div><!-- /.item -->
+                                                        src="{{ asset('images/' . $testimony['image']) }}" alt="testi-1-1"
+                                                        title="testi-1-1">
+                                                    <div class="quite">
+                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                            width=" " height=" "
+                                                            viewBox="0 0 300.000000 300.000000"
+                                                            preserveAspectRatio="xMidYMid meet">
+                                                            <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
+                                                                fill="" stroke="none">
+                                                                <path
+                                                                    d="M1127 1828 c-115 -123 -194 -392 -154 -529 53 -180 275 -240 406 -108 116 115 84 315 -61 390 -21 10 -44 19 -53 19 -12 0 -15 6 -9 23 9 30 43 97 65 128 l18 26 -74 51 c-41 29 -78 52 -82 52 -4 0 -29 -23 -56 -52z" />
+                                                                <path
+                                                                    d="M1711 1825 c-99 -109 -154 -264 -155 -435 -1 -116 7 -141 66 -199 116 -116 313 -85 390 63 34 64 31 155 -7 224 -30 55 -89 105 -138 118 -15 3 -27 13 -27 20 0 17 34 87 61 126 11 14 19 28 19 31 0 7 -124 95 -143 103 -9 3 -34 -17 -66 -51z" />
+                                                            </g>
+                                                        </svg>
+                                                    </div><!-- /.quite -->
+                                                </div><!-- /.testimonials-card__thumb -->
+                                                <div class="testimonials-card__fram">
+                                                    <div class="testimonials-card__fram__signeture">
+                                                        <img decoding="async"
+                                                            src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/signeture.png"
+                                                            alt="signeture" title="signeture">
+                                                    </div><!-- /.testimonials-card__fram__signneture -->
+                                                    <div class="testimonials-card__fram__tag">
+                                                        <span>{{ $testimony['role'] }}</span>
+                                                    </div><!-- /.testimonials-card__fram__tag -->
+                                                </div><!-- /.testimonials-card__fram -->
+                                            </div><!-- /.testimonials-card__bottom -->
+                                        </div><!-- /.testimonials-card -->
+                                    </div><!-- /.item -->
+                                @endforeach
+
                             </div><!-- /.row -->
                         </div><!-- /.container -->
                     </section><!-- /.testimonials-page -->

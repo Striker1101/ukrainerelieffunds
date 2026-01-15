@@ -1778,12 +1778,12 @@
                 <!-- Breadcrumb NavXT 7.5.0 -->
                 <li class="home"><span property="itemListElement" typeof="ListItem"><a property="item"
                             typeof="WebPage" title="Go to Carit." href="https://caritwp.bracketweb.com"
-                            class="home"><span property="name">{{config('custom.title')}}</span></a>
+                            class="home"><span property="name">{{ config('custom.title') }}</span></a>
                         <meta property="position" content="1">
                     </span></li>
                 <li class="post post-page current-item"><span property="itemListElement" typeof="ListItem"><span
                             property="name" class="post post-page current-item">Donations</span>
-                        <meta property="url" content="{{route('donation')}}">
+                        <meta property="url" content="{{ route('donation') }}">
                         <meta property="position" content="2">
                     </span></li>
             </ul><!-- /.thm-breadcrumb list-unstyled -->
@@ -1956,7 +1956,6 @@
 
 @section('footer_links')
     <script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/carit/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
     <div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>
     <script>

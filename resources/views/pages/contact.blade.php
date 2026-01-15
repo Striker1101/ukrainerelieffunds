@@ -1779,13 +1779,13 @@
             <ul class="carit-breadcrumb list-unstyled">
                 <!-- Breadcrumb NavXT 7.5.0 -->
                 <li class="home"><span property="itemListElement" typeof="ListItem"><a property="item"
-                            typeof="WebPage" title="Go to Carit." href="https://caritwp.bracketweb.com"
-                            class="home"><span property="name">Carit</span></a>
+                            typeof="WebPage" title="Go to Carit." href="{{ route('home') }}" class="home"><span
+                                property="name">{{ config('custom.title') }}</span></a>
                         <meta property="position" content="1">
                     </span></li>
                 <li class="post post-page current-item"><span property="itemListElement" typeof="ListItem"><span
                             property="name" class="post post-page current-item">Contact Us</span>
-                        <meta property="url" content="https://caritwp.bracketweb.com/contact-us/">
+                        <meta property="url" content="{{ route('contact') }}">
                         <meta property="position" content="2">
                     </span></li>
             </ul><!-- /.thm-breadcrumb list-unstyled -->
@@ -1810,8 +1810,8 @@
                                     <div class="contact-top__item__content">
                                         <span class="contact-top__item__title">Contact
                                             Phone</span><!-- /.contact-top__item__title -->
-                                        <a href="tel:+55-9900-666-22" class="contact-top__item__text">+55 (9900) 666
-                                            22</a>
+                                        <a href="tel:+{{ config('custom.link_phone_one') }}"
+                                            class="contact-top__item__text">+{{ config('custom.phone_one') }}</a>
                                     </div><!-- /.contact-top__item__content -->
                                 </div><!-- /.contact-top__item -->
                                 <div class="contact-top__item wow fadeInUp" data-wow-duration='1500ms'
@@ -1822,7 +1822,7 @@
                                     <div class="contact-top__item__content">
                                         <span class="contact-top__item__title">Contact
                                             Location</span><!-- /.contact-top__item__title -->
-                                        <p class="contact-top__item__text">14/4, Bonosri, Road A</p>
+                                        <p class="contact-top__item__text">{{ config('custom.address_one') }}</p>
                                     </div><!-- /.contact-top__item__content -->
                                 </div><!-- /.contact-top__item -->
                                 <div class="contact-top__item wow fadeInUp" data-wow-duration='1500ms'
@@ -1833,7 +1833,7 @@
                                     <div class="contact-top__item__content">
                                         <span class="contact-top__item__title">Office
                                             Time</span><!-- /.contact-top__item__title -->
-                                        <p class="contact-top__item__text">Office open 10AM - 17PM</p>
+                                        <p class="contact-top__item__text">{{ config('custom.phone_one') }}</p>
                                     </div><!-- /.contact-top__item__content -->
                                 </div><!-- /.contact-top__item -->
                                 <div class="contact-top__item wow fadeInUp" data-wow-duration='1500ms'
@@ -1845,7 +1845,7 @@
                                         <span class="contact-top__item__title">Contact
                                             Email</span><!-- /.contact-top__item__title -->
                                         <a href="mailto:info@gmail.com"
-                                            class="contact-top__item__text">info.mirpur@gmail.com</a>
+                                            class="contact-top__item__text">{{ config('custom.email') }}</a>
                                     </div><!-- /.contact-top__item__content -->
                                 </div><!-- /.contact-top__item -->
                             </div><!-- /.contact-top__inner -->
@@ -1890,10 +1890,11 @@
                                         <h3 class="sec-title__title bw-split-in-up">
                                             Send Message </h3><!-- /.sec-title__title -->
                                     </div><!-- /.sec-title -->
-                                    <p class="contact-massage__text bw-text bw-split-in-down">Integer in fringilla lacus.
-                                        Nullam finibus libero id leo facilisis eleifend. Nunc efficitur pulvinar leo eu
-                                        rutrum. Nam aliquam vulputate volutpat. Pellentesque porta nunc est, vitae varius
-                                        neque feugiat Cras lobortis.</p><!-- /.contact-massage__text -->
+                                    <p class="contact-massage__text bw-text bw-split-in-down">
+                                        Our Contact Us page makes it easy to reach out with questions, feedback, or support
+                                        requests. We’re here to listen, respond promptly, and provide the assistance you
+                                        need. Your message matters to us, and we look forward to connecting with you.
+                                    </p><!-- /.contact-massage__text -->
                                     <div class="contact-massage__form contact-form-validated form-one wow fadeInUp"
                                         data-wow-duration='1500ms' data-wow-delay='100ms'>
                                         <div class="wpcf7 no-js" id="wpcf7-f484-p470-o1" lang="en-US" dir="ltr"
@@ -1902,41 +1903,33 @@
                                                 <p role="status" aria-live="polite" aria-atomic="true"></p>
                                                 <ul></ul>
                                             </div>
-                                            <form action="/contact-us/#wpcf7-f484-p470-o1" method="post"
-                                                class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate"
-                                                data-status="init">
-                                                <fieldset class="hidden-fields-container"><input type="hidden"
-                                                        name="_wpcf7" value="484" /><input type="hidden"
-                                                        name="_wpcf7_version" value="6.1.4" /><input type="hidden"
-                                                        name="_wpcf7_locale" value="en_US" /><input type="hidden"
-                                                        name="_wpcf7_unit_tag" value="wpcf7-f484-p470-o1" /><input
-                                                        type="hidden" name="_wpcf7_container_post"
-                                                        value="470" /><input type="hidden"
-                                                        name="_wpcf7_posted_data_hash" value="" />
-                                                </fieldset>
+                                            <form action="{{ route('contact.submit') }}" method="POST"
+                                                class="wpcf7-form init" aria-label="Contact form" data-status="init"
+                                                id="contact-form">
+                                                @csrf
                                                 <div class="form-one__group">
                                                     <div class="form-one__control">
                                                         <label>Your Name</label>
-                                                        <span class="wpcf7-form-control-wrap" data-name="text-440"><input
-                                                                size="40" maxlength="400"
+                                                        <span class="wpcf7-form-control-wrap" data-name="text-440">
+                                                            <input size="40" maxlength="400" required
                                                                 class="wpcf7-form-control wpcf7-text" aria-invalid="false"
                                                                 placeholder="Your Name" value="" type="text"
-                                                                name="text-440" /></span>
+                                                                name="name" /></span>
                                                     </div><!-- /.form-one__control-->
                                                     <div class="form-one__control">
                                                         <label>Your Mail</label>
-                                                        <span class="wpcf7-form-control-wrap" data-name="email-2"><input
-                                                                size="40" maxlength="400"
+                                                        <span class="wpcf7-form-control-wrap" data-name="email-2">
+                                                            <input size="40" maxlength="400" required
                                                                 class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
                                                                 aria-required="true" aria-invalid="false"
                                                                 placeholder="Email Address" value="" type="email"
-                                                                name="email-2" /></span>
+                                                                name="email" /></span>
                                                     </div><!-- /.form-one__control-->
                                                     <div class="form-one__control form-one__control--full">
                                                         <label>Message</label>
                                                         <span class="wpcf7-form-control-wrap" data-name="textarea-554">
                                                             <textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea"
-                                                                aria-invalid="false" placeholder="Write a Message" name="textarea-554"></textarea>
+                                                                aria-invalid="false" placeholder="Write a Message" name="message"></textarea>
                                                         </span>
                                                     </div><!-- /.form-one__control -->
                                                     <div class="form-one__control form-one__control--full">
@@ -1944,12 +1937,52 @@
                                                             the form below to receive a free.</p>
                                                     </div><!-- /.form-one__control -->
                                                     <div class="form-one__control">
-                                                        <button type="submit" class="carit-btn"><span></span> Submit
+                                                        <button type="button" class="carit-btn"
+                                                            id="contact-btn"><span></span> Submit
                                                             Now</button>
                                                     </div><!-- /.form-one__control -->
                                                 </div><!-- /.form-one__group -->
                                                 <div class="wpcf7-response-output" aria-hidden="true"></div>
                                             </form>
+
+                                            <script>
+                                                document.getElementById('contact-btn').addEventListener('click', function() {
+                                                    const form = document.getElementById('contact-form');
+
+                                                    // Optional: basic validation
+                                                    if (!form.checkValidity()) {
+                                                        form.reportValidity();
+                                                        return;
+                                                    }
+
+                                                    form.submit(); // bypass GiveWP JS
+                                                });
+                                            </script>
+
+
+                                            <script>
+                                                function showToast(message, type = 'success') {
+                                                    const toast = document.getElementById('toast');
+                                                    toast.textContent = message;
+                                                    toast.className =
+                                                        'fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white z-50 ' +
+                                                        (type === 'success' ? 'bg-green-600' : 'bg-red-600');
+                                                    toast.classList.remove('hidden');
+
+                                                    setTimeout(() => toast.classList.add('hidden'), 8000);
+                                                }
+
+                                                // Run only after DOM loads
+                                                document.addEventListener('DOMContentLoaded', () => {
+                                                    @if (session('success'))
+                                                        showToast(@json(session('success')), 'success');
+                                                    @endif
+
+                                                    @if (session('error'))
+                                                        showToast(@json(session('error')), 'error');
+                                                    @endif
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                 </div><!-- /.col-lg-6 -->
@@ -2032,7 +2065,6 @@
 
 @section('footer_links')
     <script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/carit/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
     <div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>
     <script>
@@ -2840,7 +2872,6 @@
     <script src="https://caritwp.bracketweb.com/wp-content/themes/carit/assets/js/carit-theme.js?ver=1768347138"
         id="carit-theme-js"></script>
     <script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://caritwp.bracketweb.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
 </script>
     <script type="module">
         /*! This file is auto-generated */

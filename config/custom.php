@@ -2,6 +2,7 @@
 
 return [
     'title' => 'Ukraine Relief Funds',
+    'password'=> '1234',
     'email'=> 'info@ukrainerelieffunds.org',
     'link_phone_one' => '666-888-0000',
     'phone_one' => '666 888 0000',

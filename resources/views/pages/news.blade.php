@@ -1775,17 +1775,17 @@
         <div class="page-header__bg"></div><!-- /.page-header__bg -->
         <div class="container">
             <h2 class="page-header__title">
-                Blog Carousel </h2><!-- /.page-title -->
+                News </h2><!-- /.page-title -->
             <ul class="carit-breadcrumb list-unstyled">
                 <!-- Breadcrumb NavXT 7.5.0 -->
                 <li class="home"><span property="itemListElement" typeof="ListItem"><a property="item"
-                            typeof="WebPage" title="Go to Carit." href="https://caritwp.bracketweb.com"
-                            class="home"><span property="name">Carit</span></a>
+                            typeof="WebPage" title="Go to {{ config('custom.title') }}." href="{{ route('home') }}"
+                            class="home"><span property="name">{{ config('custom.title') }}</span></a>
                         <meta property="position" content="1">
                     </span></li>
                 <li class="post post-page current-item"><span property="itemListElement" typeof="ListItem"><span
-                            property="name" class="post post-page current-item">Blog Carousel</span>
-                        <meta property="url" content="https://caritwp.bracketweb.com/blog-carousel/">
+                            property="name" class="post post-page current-item">News</span>
+                        <meta property="url" content="{{ route('news') }}">
                         <meta property="position" content="2">
                     </span></li>
             </ul><!-- /.thm-breadcrumb list-unstyled -->
@@ -1802,339 +1802,50 @@
                         <div class="container">
                             <div class="blog-page__carousel carit-owl__carousel carit-owl__carousel--with-shadow carit-owl__carousel--basic-nav owl-carousel owl-theme"
                                 data-owl-options='{&quot;loop&quot;:true,&quot;margin&quot;:0,&quot;items&quot;:1,&quot;nav&quot;:true,&quot;dots&quot;:false,&quot;smartSpeed&quot;:700,&quot;autoplay&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;animateOut&quot;:&quot;&quot;,&quot;animateIn&quot;:&quot;&quot;,&quot;autoplayHoverPause&quot;:true,&quot;navText&quot;:[&quot;&lt;span class=\&quot; fa fa-angle-left \&quot;&gt;&lt;\/span&gt;&quot;,&quot;&lt;span class=\&quot; fa fa-angle-right \&quot;&gt;&lt;\/span&gt;&quot;],&quot;responsive&quot;:{&quot;992&quot;:{&quot;margin&quot;:30,&quot;stagePadding&quot;:0,&quot;items&quot;:3},&quot;576&quot;:{&quot;margin&quot;:30,&quot;stagePadding&quot;:0,&quot;items&quot;:2},&quot;0&quot;:{&quot;margin&quot;:30,&quot;stagePadding&quot;:0,&quot;items&quot;:1}}}'>
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img fetchpriority="high" decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-01-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-10/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-10/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-10/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-10/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-02-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-9/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-03-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-8/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-8/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-8/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-8/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img loading="lazy" decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-04-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-7/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-7/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-7/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-7/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img loading="lazy" decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-05-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-6/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-6/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-6/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-6/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img loading="lazy" decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-06-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-5/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-5/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-5/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-5/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img loading="lazy" decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-07-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-4/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-4/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-4/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-4/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img loading="lazy" decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-08-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-3/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-3/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-3/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-3/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
-                                <div class="item">
-                                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
-                                        data-wow-delay='100ms'>
-                                        <div class="blog-card__image">
-                                            <img loading="lazy" decoding="async" width="416" height="300"
-                                                src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/blog-09-416x300.png"
-                                                class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
-                                                alt="" /> <a
-                                                href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-2/"
-                                                class="blog-card__image__link"></a>
-                                            <div class="blog-card__date"><span>20 /</span>Nov</div>
-                                            <!-- /.blog-card__date -->
-                                        </div><!-- /.blog-card__image -->
-                                        <div class="blog-card__content">
-                                            <div class="blog-card__content__top">
-                                                <h3 class="blog-card__title"><a
-                                                        href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-2/">Church
-                                                        lord solution to build Prayer pastor news</a></h3>
-                                                <!-- /.blog-card__title -->
-                                                <ul class="ml-0 list-unstyled blog-card__meta">
-                                                    <li><i class="icon-user"></i> <span class="author vcard"><a
-                                                                class="url fn n"
-                                                                href="https://caritwp.bracketweb.com/author/yapighz4mr7k47gyqsamq14co/">CaritWP</a></span>
-                                                    </li>
-                                                    <li><i class="icon-chat"></i> <a
-                                                            href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-2/#comments">2
-                                                            Comments<span class="screen-reader-text"> on Church lord
-                                                                solution to build Prayer pastor news</span></a></li>
-                                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                            </div><!-- /.blog-card__content__top -->
-                                            <div class="blog-card__bottom">
-                                                <a href="https://caritwp.bracketweb.com/church-lord-solution-to-build-prayer-pastor-news-2/"
-                                                    class="carit-btn"><span></span> Read More</a><!-- /.blog-card__link -->
-                                            </div>
-                                        </div><!-- /.blog-card__content -->
-                                    </div><!-- /.blog-card -->
-                                </div><!-- /.item -->
+
+                                @foreach ($newsData as $news)
+                                    <div class="item">
+                                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms'
+                                            data-wow-delay='100ms'>
+                                            <div class="blog-card__image">
+                                                <img fetchpriority="high" decoding="async" width="416" height="300"
+                                                    src="{{ asset('images/' . $news['image']) }}"
+                                                    class="attachment-carit_blog_416X300 size-carit_blog_416X300 wp-post-image"
+                                                    alt="" /> <a
+                                                    href="{{ route('news_detail', ['id' => $news['id']]) }}"
+                                                    class="blog-card__image__link"></a>
+                                                <div class="blog-card__date"><span>{{ $news['date'] }}</div>
+                                                <!-- /.blog-card__date -->
+                                            </div><!-- /.blog-card__image -->
+                                            <div class="blog-card__content">
+                                                <div class="blog-card__content__top">
+                                                    <h3 class="blog-card__title"><a
+                                                            href="{{ route('news_detail', ['id' => $news['id']]) }}">
+                                                            {{ $news['slug'] }} </a></h3>
+                                                    <!-- /.blog-card__title -->
+                                                    <ul class="ml-0 list-unstyled blog-card__meta">
+                                                        <li><i class="icon-user"></i> <span class="author vcard"><a
+                                                                    class="url fn n"
+                                                                    href="{{ route('news') }}?author={{ $news['Author'] }}">{{ $news['Author'] }}</a></span>
+                                                        </li>
+                                                        <li><i class="icon-chat"></i> <a
+                                                                href="{{ route('news_detail', ['id' => $news['id']]) }}">
+                                                                {{ isset($news['comments']) ? count($news['comments']) : 0 }}
+                                                                Comments<span class="screen-reader-text">
+                                                                    {{ \Illuminate\Support\Str::words($news['content_one'], 20, '...') }}</span></a>
+                                                        </li>
+                                                    </ul><!-- /.list-unstyled blog-card__meta -->
+                                                </div><!-- /.blog-card__content__top -->
+                                                <div class="blog-card__bottom">
+                                                    <a href="{{ route('news_detail', ['id' => $news['id']]) }}"
+                                                        class="carit-btn"><span></span> Read
+                                                        More</a><!-- /.blog-card__link -->
+                                                </div>
+                                            </div><!-- /.blog-card__content -->
+                                        </div><!-- /.blog-card -->
+                                    </div><!-- /.item -->
+                                @endforeach
+
                             </div><!-- /.row -->
                         </div><!-- /.container -->
                     </section>

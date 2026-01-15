@@ -15,9 +15,26 @@ class NewsData
         ];
     }
 
+    public static function tags(): array
+    {
+        return [
+            'Water',
+            'Sanitation',
+            'Emergency',
+            'Relief',
+            'Healthcare',
+            'Children',
+            'Education',
+            'Empowerment',
+            'Community',
+            'Development',
+        ];
+    }
+
     public static function news(): array
     {
         $categories = self::categories();
+        $tags = self::tags();
 
         return [
             [
@@ -25,18 +42,20 @@ class NewsData
                 'slug' => 'church-lord-solution',
                 'image' => 'blog-01-416x458.png',
                 'Author' => 'Admin',
+                'Author_image' => null,
+                'Author_keyword' => "Clean Water Advocate\nCommunity Builder\nHealth Educator",
                 'date' => '2025-01-03',
-                'category' => $categories[2],
-                'content_one' => 'Millions of people living in rural communities struggle daily with access to clean and safe drinking water. Women and children often walk long distances to fetch water from unsafe sources.',
-                'content_two' => 'This project focuses on drilling boreholes, installing water purification systems, and educating communities on proper water hygiene practices to prevent waterborne diseases.',
+                'category' => [$categories[2], $categories[4]],
+                'content_one' => 'Millions of people in rural communities lack access to safe drinking water.',
+                'content_two' => 'The project drills boreholes and educates communities on hygiene.',
                 'comments' => [
                     [
                         'name' => 'Sarah Ahmed',
-                        'message' => 'This initiative will save many lives. Clean water is a basic human right.',
+                        'message' => 'Clean water changes everything.',
                         'date' => '2025-01-05',
                     ],
                 ],
-                'tags' => [ 'Water', 'Sanitation'],
+                'tags' => [$tags[0], $tags[1]],
             ],
 
             [
@@ -44,18 +63,20 @@ class NewsData
                 'slug' => 'emergency-disaster-response',
                 'image' => 'blog-02-416x458.png',
                 'Author' => 'Relief Team',
+                'Author_image' => null,
+                'Author_keyword' => "Disaster Responder\nEmergency Aid Specialist\nCommunity Helper",
                 'date' => '2025-01-10',
-                'category' => $categories[0],
-                'content_one' => 'Natural disasters leave families without shelter, food, or basic necessities. Immediate response is critical to reduce suffering and loss of life.',
-                'content_two' => 'We provide emergency food supplies, temporary shelter, and medical assistance to affected communities within the first critical days.',
+                'category' => [$categories[0], $categories[1]],
+                'content_one' => 'Natural disasters displace thousands of families.',
+                'content_two' => 'Rapid relief includes food, shelter, and medical aid.',
                 'comments' => [
                     [
                         'name' => 'John Peters',
-                        'message' => 'Thank you for responding quickly during the floods. Your help mattered.',
+                        'message' => 'Your fast response saved lives.',
                         'date' => '2025-01-11',
                     ],
                 ],
-                'tags' => [ 'Emergency', 'Relief'],
+                'tags' => [$tags[2], $tags[3]],
             ],
 
             [
@@ -63,18 +84,20 @@ class NewsData
                 'slug' => 'medical-aid-for-children',
                 'image' => 'blog-03-416x458.png',
                 'Author' => 'Health Unit',
+                'Author_image' => null,
+                'Author_keyword' => "Child Healthcare\nMedical Support\nHealth Awareness",
                 'date' => '2025-01-12',
-                'category' => $categories[1],
-                'content_one' => 'Children in conflict and low-income regions often lack access to basic healthcare services, putting their lives at risk.',
-                'content_two' => 'This program delivers essential medicines, medical checkups, and psychological support to vulnerable children and their families.',
+                'category' => [$categories[1], $categories[4]],
+                'content_one' => 'Children lack access to essential healthcare services.',
+                'content_two' => 'We provide medicines and psychological support.',
                 'comments' => [
                     [
                         'name' => 'Amina Yusuf',
-                        'message' => 'My child received treatment when we had nowhere else to go.',
+                        'message' => 'My child received urgent care.',
                         'date' => '2025-01-13',
                     ],
                 ],
-                'tags' => [ 'Healthcare', 'Children'],
+                'tags' => [$tags[4], $tags[5]],
             ],
 
             [
@@ -82,10 +105,12 @@ class NewsData
                 'slug' => 'education-for-the-future',
                 'image' => 'instagram-1-1.jpg',
                 'Author' => 'Education Team',
+                'Author_image' => null,
+                'Author_keyword' => "Teacher Support\nLearning Advocate\nChild Education",
                 'date' => '2025-01-14',
-                'category' => $categories[3],
-                'content_one' => 'Many children are unable to attend school due to poverty, displacement, or lack of resources.',
-                'content_two' => 'We provide school materials, learning centers, and teacher support to help children gain access to quality education.',
+                'category' => [$categories[3], $categories[0]],
+                'content_one' => 'Millions of children are out of school.',
+                'content_two' => 'We provide school materials, learning centers, and teacher support.',
                 'comments' => [
                     [
                         'name' => 'Grace Nwoye',
@@ -93,7 +118,7 @@ class NewsData
                         'date' => '2025-01-15',
                     ],
                 ],
-                'tags' => [ 'Education', 'Empowerment'],
+                'tags' => [$tags[6], $tags[7]],
             ],
 
             [
@@ -101,10 +126,12 @@ class NewsData
                 'slug' => 'community-growth-project',
                 'image' => 'instagram-1-3.jpg',
                 'Author' => 'Community Outreach',
+                'Author_image' => 'author-community.jpg',
+                'Author_keyword' => "Local Development\nCommunity Builder\nBusiness Support",
                 'date' => '2025-01-16',
-                'category' => $categories[4],
-                'content_one' => 'Strong communities are built through collaboration, resources, and opportunity.',
-                'content_two' => 'This initiative supports small businesses, vocational training, and local infrastructure to promote sustainable community development.',
+                'category' => [$categories[4], $categories[3]],
+                'content_one' => 'Strong communities are built through collaboration and resources.',
+                'content_two' => 'This initiative supports small businesses and local infrastructure.',
                 'comments' => [
                     [
                         'name' => 'Daniel Okoro',
@@ -112,7 +139,7 @@ class NewsData
                         'date' => '2025-01-17',
                     ],
                 ],
-                'tags' => [ 'Community', 'Development'],
+                'tags' => [$tags[8], $tags[9]],
             ],
         ];
     }
