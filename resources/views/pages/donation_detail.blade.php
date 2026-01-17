@@ -1983,12 +1983,33 @@
 
 
                                                 {{-- OFFLINE INFO --}}
-                                                <div id="offline-info" class="hidden">
-                                                    <p>
-                                                        Send cheque to:<br>
-                                                        <strong>Ukraine Relief Fund</strong><br>
-                                                        12 Charity Street, London, UK
-                                                    </p>
+                                                <div id="offline-info"
+                                                    class="hidden max-w-md p-4 border border-gray-200 rounded-lg bg-gray-50">
+                                                    <h3 class="mb-3 text-lg font-semibold text-gray-800">
+                                                        Offline Payment Details
+                                                    </h3>
+
+                                                    <div class="space-y-2 text-sm text-gray-700">
+                                                        <div class="flex justify-between">
+                                                            <span class="font-medium">Bank Name</span>
+                                                            <span>{{ config('custom.bank') }}</span>
+                                                        </div>
+
+                                                        <div class="flex justify-between">
+                                                            <span class="font-medium">Router</span>
+                                                            <span>{{ config('custom.router') }}</span>
+                                                        </div>
+
+                                                        <div class="flex justify-between">
+                                                            <span class="font-medium">Account</span>
+                                                            <span>{{ config('custom.account') }}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="p-3 mt-4 text-sm text-gray-800 bg-white rounded-md">
+                                                        <p class="mb-1 font-medium">Send cheque to:</p>
+                                                        <p class="font-semibold">{{ config('custom.cheque_add') }}</p>
+                                                    </div>
                                                 </div>
 
                                             </div>

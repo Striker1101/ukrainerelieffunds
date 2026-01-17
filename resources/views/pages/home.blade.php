@@ -1138,11 +1138,11 @@
             --wp--preset--spacing--60: 2.25rem;
             --wp--preset--spacing--70: 3.38rem;
             --wp--preset--spacing--80: 5.06rem;
-            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
-            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
-            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
-            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);
-            --wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);
+            --wp--preset--shadow--natural: 6px 6px 9px #0057B7;
+            --wp--preset--shadow--deep: 12px 12px 50px #0057B7;
+            --wp--preset--shadow--sharp: 6px 6px 0px #0057B7;
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px #0057B7;
+            --wp--preset--shadow--crisp: 6px 6px 0px#0057B7;
         }
 
         :where(.is-layout-flex) {
@@ -1582,8 +1582,7 @@
     <link rel='stylesheet' id='bootstrap-css'
         href='https://caritwp.bracketweb.com/wp-content/themes/carit/assets/vendors/bootstrap/css/bootstrap.min.css?ver=5.0.0'
         media='all' />
-    <link rel='stylesheet' id='carit-style-css'
-        href='https://caritwp.bracketweb.com/wp-content/themes/carit/style.css?ver=1768347138' media='all' />
+
     <style id='carit-style-inline-css'>
         :root {}
 
@@ -2449,16 +2448,18 @@
                                                                 <div class="audio-one__item__auth">
                                                                     <div class="audio-one__item__auth__image">
                                                                         <img decoding="async"
-                                                                            src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/music-auth-1-1.jpg"
+                                                                            src="{{ asset('images/tes/tes3.jpg') }}"
                                                                             alt="music-auth-1-1" title="music-auth-1-1">
                                                                     </div>
                                                                     <!-- /.audio-one__item__auth__image -->
                                                                     <div class="audio-one__item__auth__content">
                                                                         <h4 class="audio-one__item__auth__name">
-                                                                            Church radio station</h4>
+                                                                            when people come together, share ideas, and
+                                                                            support one another, real change becomes
+                                                                            possible.</h4>
                                                                         <!-- /.audio-one__item__auth__name -->
                                                                         <p class="audio-one__item__auth__dec">
-                                                                            Total audio 250+</p>
+                                                                            Total audio 454+</p>
                                                                         <!-- /.audio-one__item__auth__dec -->
                                                                     </div>
                                                                     <!-- /.audio-one__item__auth__content -->
@@ -2523,23 +2524,24 @@
 
                                                             </div>
 
-                                                            <h3 class="audio-one__item__title">we believe in
-                                                                the transformative power of community.</h3>
+                                                            <h3 class="audio-one__item__title">Building Impact Through
+                                                                Unity</h3>
                                                             <!-- /.audio-one__item__title -->
                                                             <div class="audio-one__item__bottom">
                                                                 <div class="audio-one__item__auth">
                                                                     <div class="audio-one__item__auth__image">
                                                                         <img decoding="async"
-                                                                            src="https://caritwp.bracketweb.com/wp-content/uploads/2025/11/music-auth-1-1.jpg"
+                                                                            src="{{ asset('images/tes/tes4.jpg') }}"
                                                                             alt="music-auth-1-1" title="music-auth-1-1">
                                                                     </div>
                                                                     <!-- /.audio-one__item__auth__image -->
                                                                     <div class="audio-one__item__auth__content">
                                                                         <h4 class="audio-one__item__auth__name">
-                                                                            Church radio station</h4>
+                                                                            turning collective effort into lasting progress.
+                                                                        </h4>
                                                                         <!-- /.audio-one__item__auth__name -->
                                                                         <p class="audio-one__item__auth__dec">
-                                                                            Total audio 250+</p>
+                                                                            Total audio 550+</p>
                                                                         <!-- /.audio-one__item__auth__dec -->
                                                                     </div>
                                                                     <!-- /.audio-one__item__auth__content -->
@@ -2604,8 +2606,7 @@
 
                                                             </div>
 
-                                                            <h3 class="audio-one__item__title">we believe in
-                                                                the transformative power of community.</h3>
+                                                            <h3 class="audio-one__item__title">Real Change</h3>
                                                             <!-- /.audio-one__item__title -->
                                                             <div class="audio-one__item__bottom">
                                                                 <div class="audio-one__item__auth">
@@ -2617,10 +2618,11 @@
                                                                     <!-- /.audio-one__item__auth__image -->
                                                                     <div class="audio-one__item__auth__content">
                                                                         <h4 class="audio-one__item__auth__name">
-                                                                            Church radio station</h4>
+                                                                            growth happens best when people support one
+                                                                            another.</h4>
                                                                         <!-- /.audio-one__item__auth__name -->
                                                                         <p class="audio-one__item__auth__dec">
-                                                                            Total audio 250+</p>
+                                                                            Total audio 390+</p>
                                                                         <!-- /.audio-one__item__auth__dec -->
                                                                     </div>
                                                                     <!-- /.audio-one__item__auth__content -->
