@@ -59,113 +59,167 @@
         @yield('footer_links')
 
 
-        <!-- ✅ Donation Testimony Toast -->
-        <div id="donation-toast"
-            class="fixed bottom-10 left-5 z-[9999] w-80 rounded-xl bg-white p-4 shadow-2xl ring-1 ring-gray-200
-               opacity-0 pointer-events-none translate-y-6
-               transition-all duration-500 ease-out">
+        <div id="donation-toast">
+            <div class="toast-inner">
+                <img id="donor-img" alt="donor">
 
-            <div class="flex items-center gap-3">
-                <img id="donor-img" class="object-cover w-12 h-12 border border-gray-200 rounded-full" alt="donor">
+                <div class="toast-content">
+                    <div id="donor-name" class="name"></div>
 
-                <div class="flex-1">
-                    <p id="donor-name" class="text-sm font-semibold text-gray-800"></p>
+                    <div class="amount">
+                        Donated <span id="donor-amount"></span>
+                    </div>
 
-                    <p class="text-xs text-gray-600">
-                        Donated
-                        <span id="donor-amount" class="font-bold text-green-600"></span>
-                    </p>
-                    <div class="flex items-center gap-2 mt-1 text-xs text-gray-500">
-                        <img id="donor-flag" class="w-6 h-4 border border-gray-200 rounded-sm" alt="flag">
+                    <div class="country">
+                        <img id="donor-flag" alt="flag">
                         <span id="donor-country"></span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ✅ Donation Toast Script -->
 
+        <style>
+            /* 🔒 Absolute isolation */
+            #donation-toast {
+                position: fixed !important;
+                left: 20px !important;
+                bottom: -200px !important;
+                z-index: 2147483647 !important;
 
+                width: 320px;
+                background: #ffffff;
+                border-radius: 14px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .2);
+                border: 1px solid #e5e7eb;
 
-        <!-- ✅ Donation Toast Script -->
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
+                opacity: 0;
+                pointer-events: none;
 
-                const names = [
-                    'Aisha Suleiman', 'Fatima Noor', 'Zainab Musa', 'Yusuf Ibrahim',
-                    'Ahmed Bello', 'Hassan Ali', 'Maryam Sadiq', 'Abdul Rahman',
-                    'Khadija Umar', 'Salman Farouk', 'Aminu Lawal', 'Safiya Idris',
-                    'Olena Kovalenko', 'Andriy Shevchenko', 'Iryna Melnyk',
-                    'Dmytro Bondarenko', 'Kateryna Ivanova', 'Mykola Petrenko',
-                    'Oksana Hrytsenko', 'Yaroslav Koval',
-                    'Michael Green', 'Adam Rivers', 'Oliver Stone', 'Daniel Woods',
-                    'Lucas Hill', 'Ethan Brooks', 'James Forest', 'Henry Lake',
-                    'Samuel Reed', 'Benjamin Snow', 'Noah Field', 'Caleb Moss',
-                    'Amina Hassan', 'Bilal Ahmed', 'Sofia Karim', 'Imran Yusuf'
-                ];
+                transition:
+                    opacity .4s ease,
+                    bottom .4s ease;
+            }
 
-                const toast = document.getElementById('donation-toast');
-                async function showDonationToast() {
-                    try {
-                        const user = await fetch('https://randomuser.me/api/')
-                            .then(res => res.json())
-                            .then(data => data.results[0]);
+            /* visible state */
+            #donation-toast.show {
+                bottom: 20px !important;
+                opacity: 1;
+            }
 
-                        const countries = await fetch(
-                            'https://restcountries.com/v3.1/all?fields=name,flags'
-                        ).then(res => res.json());
+            /* layout */
+            #donation-toast .toast-inner {
+                display: flex;
+                gap: 12px;
+                padding: 14px;
+            }
 
-                        const country = countries[
-                            Math.floor(Math.random() * countries.length)
-                        ];
+            #donation-toast img {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 1px solid #ddd;
+            }
 
-                        const amount = (Math.floor(Math.random() * 90) + 10) * 1000;
+            #donation-toast .toast-content {
+                flex: 1;
+                font-family: system-ui, sans-serif;
+            }
 
-                        document.getElementById('donor-img').src = user.picture.medium;
-                        document.getElementById('donor-name').textContent =
-                            names[Math.floor(Math.random() * names.length)];
-                        document.getElementById('donor-amount').textContent =
-                            `$${amount.toLocaleString()}`;
-                        document.getElementById('donor-amount').textContent =
-                            `$${amount.toLocaleString()}`;
-                        document.getElementById('donor-country').textContent =
-                            country.name.common;
-                        document.getElementById('donor-flag').src =
-                            country.flags.svg;
+            #donation-toast .name {
+                font-size: 14px;
+                font-weight: 600;
+                color: #111827;
+            }
 
-                        toast.classList.remove(
-                            'opacity-0',
-                            'pointer-events-none',
-                            'translate-y-6'
-                        );
+            #donation-toast .amount {
+                font-size: 12px;
+                color: #4b5563;
+                margin-top: 2px;
+            }
 
-                        toast.classList.add(
-                            'opacity-100',
-                            'translate-y-0'
-                        );
-                        setTimeout(() => {
-                            toast.classList.add(
-                                'opacity-0',
-                                'pointer-events-none',
-                                'translate-y-6'
-                            );
-                            toast.classList.remove(
-                                'opacity-100',
-                                'translate-y-0'
-                            );
-                        }, 7000);
+            #donation-toast .amount span {
+                color: #16a34a;
+                font-weight: 700;
+            }
 
-                    } catch (err) {
-                        console.error('Donation toast error:', err);
-                    }
-                }
+            #donation-toast .country {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                margin-top: 6px;
+                font-size: 11px;
+                color: #6b7280;
+            }
 
-                setTimeout(showDonationToast, 5000);
-                setInterval(showDonationToast, 60000);
-            });
-        </script>
+            #donation-toast .country img {
+                width: 22px;
+                height: 14px;
+                border-radius: 2px;
+            }
+        </style>
+
 
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const toast = document.getElementById('donation-toast');
+        document.body.appendChild(toast); // escape footer/theme
+
+        const donorImg = document.getElementById('donor-img');
+        const donorName = document.getElementById('donor-name');
+        const donorAmount = document.getElementById('donor-amount');
+        const donorCountry = document.getElementById('donor-country');
+        const donorFlag = document.getElementById('donor-flag');
+
+        const names = [
+            'Aisha Suleiman', 'Fatima Noor', 'Zainab Musa', 'Yusuf Ibrahim',
+            'Ahmed Bello', 'Hassan Ali', 'Maryam Sadiq', 'Abdul Rahman',
+            'Khadija Umar', 'Salman Farouk', 'Aminu Lawal', 'Safiya Idris',
+            'Olena Kovalenko', 'Andriy Shevchenko', 'Iryna Melnyk',
+            'Michael Green', 'Adam Rivers', 'Oliver Stone', 'Daniel Woods'
+        ];
+
+        async function showToast() {
+            try {
+                const user = await fetch('https://randomuser.me/api/')
+                    .then(r => r.json())
+                    .then(d => d.results[0]);
+
+                const country = await fetch(
+                        'https://restcountries.com/v3.1/all?fields=name,flags'
+                    ).then(r => r.json())
+                    .then(c => c[Math.floor(Math.random() * c.length)]);
+
+                donorImg.src = user.picture.medium;
+                donorName.textContent =
+                    names[Math.floor(Math.random() * names.length)];
+
+                const amount = (Math.floor(Math.random() * 90) + 10) * 1000;
+                donorAmount.textContent = `$${amount.toLocaleString()}`;
+
+                donorCountry.textContent = country.name.common;
+                donorFlag.src = country.flags.svg;
+
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 7000);
+
+            } catch (e) {
+                console.error('Toast error:', e);
+            }
+        }
+
+        setTimeout(showToast, 4000);
+        setInterval(showToast, 60000);
+    });
+</script>
+
 
 </html>

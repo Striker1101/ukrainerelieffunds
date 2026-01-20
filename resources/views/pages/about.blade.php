@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'About')
 
 @section('head')
     <title> {{ config('custom.title', 'Default Title') }} </title>

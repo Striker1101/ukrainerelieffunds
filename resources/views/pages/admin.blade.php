@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Admin')
 
 @section('head')
     <title> {{ config('custom.title', 'Default Title') }} </title>
@@ -3862,7 +3862,7 @@
             </div>
         </div>
     </div>
-   <!-- #page -->
+    <!-- #page -->
 
 
 
@@ -3871,7 +3871,7 @@
 
 
 @section('footer_links')
-      <script type="speculationrules">
+    <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/carit/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
     <div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>

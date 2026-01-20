@@ -3,7 +3,7 @@
 return [
     'title' => 'Ukraine Relief Funds',
     'password'=> '1234',
-    'email'=> 'info@ukrainerelieffunds.org',
+    'email'=> 'support@ukrainerelieffunds.co.za',
     'link_phone_one' => '+447848161409',
     'phone_one' => '+44(784)8161409',
     'link_phone_two' => '+13322526857',

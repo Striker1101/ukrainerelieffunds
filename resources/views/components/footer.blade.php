@@ -24,9 +24,10 @@
                                           <form data-url="#" class="main-footer__top__newsletter mc-form">
                                               <div class="form-group__form">
                                                   <input type="email" name="EMAIL"
-                                                      placeholder="Info.carit@gmail.com">
-                                                  <button type="submit" class="carit-btn"><i
-                                                          class="icon-hover"></i></button>
+                                                      placeholder="{{ config('custom.email') }}">
+                                                  <button type="submit" class="carit-btn">
+                                                      <i
+                                                          class="text-gray-600 transition-transform duration-300 fas fa-angle-right icon-hover hover:scale-125"></i></button>
                                                   <span class="icon-envelope-plus form-group__form-icon"></span>
                                               </div><!-- /.form-group -->
                                           </form><!-- /.footer-widget__newsletter mc-form -->

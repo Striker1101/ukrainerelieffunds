@@ -17,8 +17,9 @@
                                  {{-- <a href="{{ route('signup') }}" class="carit-btn"> <i class="icon-login"></i> Signup
                                      Now</a> --}}
                              </div><!-- /.list-unstyled topbar-one__info -->
-                             <div class="topbar-one__call">Talk to Member : <a href="tel:+66-123-00-22-44">+66 - 1 23 00
-                                     22 44</a></div>
+                             <div class="topbar-one__call">Talk to Member : <a
+                                     href="tel:+{{ config('custom.link_phone_two') }}">{{ config('custom.phone_two') }}</a>
+                             </div>
                              <!-- /.topbar-one__social -->
                          </div><!-- /.topbar-one__inner -->
                      </div><!-- /.container -->

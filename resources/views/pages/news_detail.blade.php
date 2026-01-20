@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'News - ' . $news['slug'])
+
 
 @section('head')
     <title> {{ config('custom.title', 'Default Title') }} </title>
